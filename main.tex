@@ -1,0 +1,246 @@
+\documentclass{beamer}
+\hypersetup{pdfpagemode=FullScreen}
+
+\usetheme{cambridge} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[natbib=true,style=authoryear,backend=bibtex,useprefix=true]{biblatex}
+\setbeamercolor*{bibliography entry title}{fg=black}
+\setbeamercolor*{bibliography entry location}{fg=black}
+\setbeamercolor*{bibliography entry note}{fg=black}
+\setbeamertemplate{bibliography item}{}
+\renewcommand*{\bibfont}{\scriptsize}
+\addbibresource{uoc-qo.bib}
+
+% adding navigation tools:
+\setbeamertemplate{navigation symbols}{} 
+
+\addtobeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.75ex,dp=.5ex,right,rightskip=1em]{mycolor}%
+\usebeamercolor[fg]{navigation symbols}\insertslidenavigationsymbol%
+\insertframenavigationsymbol%
+\insertsubsectionnavigationsymbol%
+\insertsectionnavigationsymbol%
+\insertdocnavigationsymbol%
+\insertbackfindforwardnavigationsymbol%
+    \end{beamercolorbox}%
+    }%
+    \vskip0.5pt%
+}{}
+
+
+\definecolor{myblue}{RGB}{33,84,157}
+\setbeamercolor{footline}{fg=myblue}
+\setbeamerfont{footline}{series=\bfseries}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Standard packages:
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{listings}
+\usepackage[UKenglish]{isodate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setup TikZ
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
+
+\cleanlookdateon
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author, Title, etc.
+\title[Quantum Oscillations] 
+{%
+ Quantum Oscillations in\\ Unconventional Superconductors%}
+}
+% {%
+%  {\bf Quantum Oscillations in\\ Unconventional Superconductors}%}
+% }
+
+\author[Lonzarich]
+{
+  \underline{Leo~Lonzarich} \and Gilbert~Lonzarich\inst{1} \and Suchitra~Sebastian\inst{1} \and Piers~Coleman\inst{2}
+  }
+
+\institute[Cambridge]
+{
+% \inst{1}%
+% Grinnell College, USA\\
+\inst{1}%
+Cavendish Laboratory, University of Cambridge, UK\\
+\inst{2}%
+Materials Theory Group, Rutgers University, USA
+}
+
+\date[CMS2021]
+{Condensed Matter Group Summer 2021 \hfill \today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\section{Defining the Problem}
+\subsection{SC Classifications}
+
+\begin{frame}
+{Superconductor Classifications}
+ 
+\begin{itemize}
+    \item General Classifications:
+        \begin{enumerate}
+            \item \textsc{Type I}
+            \item \textsc{Type II}
+            \item \textsc{Type III}
+            \item \textsc{(Type IV)}
+            \item $\ldots$
+        \end{enumerate}
+        
+    \item But where is the 'unconventional'?
+\end{itemize}
+ 
+\citet{baskaran2015}
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+\subsection{Quantum Oscillations}
+
+\begin{frame}[t]{Quantum Oscillations}
+  \begin{block}{Inputs}
+    \begin{itemize}
+    \item A \alert{genotype matrix} $G$.
+    \item The \alert{rows} of the matrix are \alert{taxa / individuals}.
+    \item The \alert{columns} of the matrix are \alert{SNP sites /
+        characters}. 
+    \end{itemize}
+  \end{block}
+  \begin{block}{Outputs}
+    \begin{itemize}
+    \item A \alert{haplotype matrix} $H$.
+    \item Pairs of rows in $H$ \alert{explain} the rows of $G$.
+    \item The haplotypes in $H$ are \alert{biologically plausible}. 
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+% % #########################################
+% % #########################################
+
+
+\begin{frame}{Why Do We Care?}
+  \begin{itemize}
+      \item $SmB_6$
+  \end{itemize}
+\end{frame}
+
+
+% % #########################################
+% % #########################################
+
+
+\begin{frame}{Preexisting Models}
+
+
+    \begin{itemize}
+        \item Two paths diverging in a wood:
+            \begin{enumerate}
+                \item Emergent Composite Particles:
+                    \begin{itemize}
+                        \item 'Majorana' Fermions (MFs)
+                        \item Spinons
+                    \end{itemize}
+        
+                \item 3D spin supercurrents
+        \end{enumerate}
+    \end{itemize}
+    
+
+\end{frame}
+
+
+% % #########################################
+% % #########################################
+
+
+\begin{frame}{Bogoliubov Excitations and the Origin of MFs}
+    
+\end{frame}
+
+
+% % #########################################
+% % #########################################
+
+
+\begin{frame}{Spinons}
+    
+\end{frame}
+
+
+% % #########################################
+% % #########################################
+
+
+\begin{frame}{Supercurrents (+ Superfluidity)}
+    
+\end{frame}
+
+
+% % #########################################
+% % #########################################
+
+
+\begin{frame}{The Lingering Questions}
+    
+    \begin{itemize}
+        \item Can we just keep adding (always unnecessarily) complex descriptions, or should we 'seal off' and commit to a new prescription?
+        
+        \item How do we reinvent condensed matter physics to both simplify and clarify what we know?
+    \end{itemize}
+    
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}[allowframebreaks]
+        \frametitle{References}
+        \printbibliography
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\end{document}
