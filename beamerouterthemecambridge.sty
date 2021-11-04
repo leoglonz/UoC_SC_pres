@@ -12,7 +12,7 @@
 \setbeamercolor{Progress}{fg=structure.fg!50}
 
 % In pres. logo at bottom of presentation slides.
-% \pgfdeclareimage[height=1 \cam@outer@pitch]{beamerlogocambridge}{uc-rev-cmyk}
+\pgfdeclareimage[height=0.5 \cam@outer@pitch]{beamerlogocambridge}{uc-cmyk}
 
 \mode<presentation>
 
@@ -84,9 +84,10 @@
   \end{beamercolorbox}%
 }
 
+% use 8.25 hspace without logo, and 7.5 with logo.
 \defbeamertemplate*{footprogress}{cambridge theme}
 {%
-  \usebeamerfont{progress}\usebeamercolor[fg]{progress} \insertsectionhead \hspace{8.25cm} cam21 \insertframenumber\ of \inserttotalframenumber
+  \usebeamerfont{progress}\usebeamercolor[fg]{progress} \insertsectionhead \hspace{7.5cm} cam21 \insertframenumber\ of \inserttotalframenumber
 }
 
 % Frame title continuations, default
@@ -181,10 +182,10 @@
 
 \mode<all>
 
-% \ifbeamertemplateempty{logo}{%
-%   \setbeamertemplate{logo}{%
-%       \pgfuseimage{beamerlogocambridge}
-%   }
-% }{%
-%   % Do nothing if logo is set.
-% }
+\ifbeamertemplateempty{logo}{%
+  \setbeamertemplate{logo}{%
+      \pgfuseimage{beamerlogocambridge}
+  }
+}{%
+  % Do nothing if logo is set.
+}
