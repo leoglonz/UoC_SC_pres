@@ -5,13 +5,17 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[natbib=true,style=authoryear,backend=bibtex,useprefix=true]{biblatex}
+% bibliography stuff:
+\usepackage{natbib}
+\bibliographystyle{abbrv}
+
 \setbeamercolor*{bibliography entry title}{fg=black}
 \setbeamercolor*{bibliography entry location}{fg=black}
 \setbeamercolor*{bibliography entry note}{fg=black}
 \setbeamertemplate{bibliography item}{}
 \renewcommand*{\bibfont}{\scriptsize}
-\addbibresource{uoc-qo.bib}
+
+
 
 % adding navigation tools:
 \setbeamertemplate{navigation symbols}{} 
@@ -35,18 +39,30 @@
 \definecolor{myblue}{RGB}{33,84,157}
 \setbeamercolor{footline}{fg=myblue}
 \setbeamerfont{footline}{series=\bfseries}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Standard packages:
 \usepackage[english]{babel}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{subfigure}
 \usepackage{listings}
 \usepackage[UKenglish]{isodate}
+
+\usepackage[scr=esstix,cal=boondox]{mathalfa} 
+\usepackage{enumerate,setspace}
+\usepackage{amssymb, amsthm, amsmath, amsfonts}
+\usepackage{mathtools}
+
+\usepackage{subfig}
+
+% \usepackage{cite}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -64,7 +80,7 @@
 % Author, Title, etc.
 \title[Quantum Oscillations] 
 {%
- Quantum Oscillations in\\ Unconventional Superconductors%}
+ Quantum Oscillations in\\ Unconventional Insulators%}
 }
 % {%
 %  {\bf Quantum Oscillations in\\ Unconventional Superconductors}%}
@@ -73,7 +89,7 @@
 \author[Lonzarich]
 {
   \underline{Leo~Lonzarich} \and Gilbert~Lonzarich\inst{1} \and Suchitra~Sebastian\inst{1} \and Piers~Coleman\inst{2}
-  }
+}
 
 \institute[Cambridge]
 {
@@ -86,7 +102,7 @@ Materials Theory Group, Rutgers University, USA
 }
 
 \date[CMS2021]
-{Condensed Matter Group Summer 2021 \hfill \today}
+{Condensed Matter Theory Group S/F 2021 \hfill \today}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -103,8 +119,9 @@ Materials Theory Group, Rutgers University, USA
 
 % #########################################
 % #########################################
-
 \section{Defining the Problem}
+
+
 \subsection{SC Classifications}
 
 \begin{frame}
@@ -112,14 +129,18 @@ Materials Theory Group, Rutgers University, USA
     The well-established...
     \begin{itemize}
         \item \textsc{Gen I}:
+        
             \begin{itemize}
                 \item Charge neutral, e.g. lead
-                \item Traditional Cooper pair
+                \item Traditional Cooper pairing mechanism
             \end{itemize}
+            
         \item \textsc{Gen II}
             \begin{itemize}
+            
+                \item Chemical doping, quenching long-range ferromagnetic effects
                 \item Magnetic moment / local pairing of electrons
-                \item Chemical doping, disabling long-range ferromagnetic effects
+                
             \end{itemize}
     \end{itemize}
     The frontier...
@@ -147,10 +168,45 @@ Materials Theory Group, Rutgers University, USA
 
 \subsection{States in the Gap}
 
-\begin{frame}
-{States in the Gap}
+% \begin{frame}
+% {Thermal and Electrical Insulators}
 
+%     \begin{itemize}
+%         \item States in the Gap
+%     \end{itemize}
+
+% \end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}[t]{Quantum Oscillations (QOs)}
+  
+    \begin{itemize}
+        \item Specifically w/ respect to metals:     
+        \begin{itemize}
+            \item Conduction electrons define a Fermi surface 
+            \begin{itemize}
+                \item Collection of surfaces in $k$-space separating un/occupied energy levels
+                
+                \item H Aoki, N Kimura \& T Terashima (2014); L Taillefer \& GGL (1988):
+            \end{itemize}
+            
+            \begin{figure}
+            \centering
+            \includegraphics[scale = 0.38]{fermisurf.png}
+            \label{fig:elecmuon}
+            \end{figure}
+    
+            \item C-band electrons exhibit orbital motion on Fermi surface, quantized in $H$
+            \begin{itemize}
+                \item Resistivity (or capacitance) vs. $H$
+            \end{itemize}
+        \end{itemize}
         
+    \end{itemize}
 
 \end{frame}
 
@@ -159,115 +215,610 @@ Materials Theory Group, Rutgers University, USA
 % #########################################
 
 
-\subsubsection{Quantum Oscillations}
-
-\begin{frame}[t]{Quantum Oscillations}
-  \begin{block}{Inputs}
+\begin{frame}{The Mysterious Case of SmB$_6$}
     \begin{itemize}
-    \item A \alert{genotype matrix} $G$.
-    \item The \alert{rows} of the matrix are \alert{taxa / individuals}.
-    \item The \alert{columns} of the matrix are \alert{SNP sites /
-        characters}. 
-    \end{itemize}
-  \end{block}
-  \begin{block}{Outputs}
-    \begin{itemize}
-    \item A \alert{haplotype matrix} $H$.
-    \item Pairs of rows in $H$ \alert{explain} the rows of $G$.
-    \item The haplotypes in $H$ are \alert{biologically plausible}. 
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-
-% % #########################################
-% % #########################################
-
-
-\begin{frame}{Why \textit{Should} We Care?}
-    \begin{itemize}
-        \item $Sm B_6$, $La_2 O_4$, $LaOFeAs$, $(CuS)$
-        \item Why are we seeing states in insulating gaps of these materials? 
-        \item Understanding this opens doors to finding similar high-temp SCs
-    \end{itemize}
-\end{frame}
-
-
-% % #########################################
-% % #########################################
-
-
-\begin{frame}{Preexisting Models}
-
-
-    \begin{itemize}
-        \item Two divergent approaches:
-            \begin{enumerate}
-                \item Emergent Composite Particles:
-                    \begin{itemize}
-                        \item 'Majorana' Fermions (MFs)
-                        \item Spinons
-                    \end{itemize}
+        \item Insulators (with completely filled energy bands) have no Fermi surface, \textit{implying} no QOs.
         
-                \item 3D spin supercurrents
+        \item However, the Topological Kondo Insulator SmB$_6$ defies this;
+            \begin{itemize}
+                \item Other examples: SmS, YbB$_{12}$ La$_2$O$_4$, ruthinates (e.g., RuCl$_3$, Ca$_2$RuO$_4$), densified irons like LaOFeAs.
+            \end{itemize}
+
+        \item Why do we see this gap formation -- why coexistence of metallic and insulating properties?
+        
+        % Why are we seeing states in insulating gaps of these materials? 
+        
+        % Understanding this opens doors to finding similar high-temp SCs
+        
+        \item We need an approach to understanding alternative to that in literature; salient to experimental work. 
+    \end{itemize}
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}{Magnetic QOs for SmB$_6$ (M Harstein et al.) }
+
+    \begin{figure}
+    \centering
+    \includegraphics[scale = 0.5]{capVfreq.png}
+    \label{fig:elecmuon}
+    \end{figure}
+    
+    \centering $(B=\mu_0 H_{applied}$)
+
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}{SmB$_6$ QOs Cont. (BS Tan et al.)}
+
+    \begin{figure}
+    \centering
+    \includegraphics[scale = 0.7]{MOA.png}
+    \label{fig:elecmuon}
+    \end{figure}
+    
+    $\alpha$-Fermi surface orbits 
+    [110] Magnetic Field Direction
+    24-40 T, 0.35 K
+
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}{Survey of Existing Theory}
+
+
+    
+    Three promising theories for QOs we will consider:
+        \begin{enumerate}
+            \item Emergent Composite Particles:
+                \begin{itemize}
+                    \item The 'Majorana' Fermion (MF) Model \cite{coleman1993, coleman1994}
+                    \item Fermionic Composite Exciton (fCE) Model \cite{chowdhury2018}
+                \end{itemize}
+    
+            \item Topological instability:
+                \begin{itemize}
+                    \item Skyrme Insulators \cite{coleman2017}
+                \end{itemize}
         \end{enumerate}
-    \end{itemize}
     
 
 \end{frame}
 
 
-% % #########################################
-% % #########################################
-
+% #########################################
+% #########################################
 \section{The MF Model}
 
-\begin{frame}{Bogoliubov Excitations and the Origin of MFs}
+
+\begin{frame}
+    
+    \centering Majorana Fermions
+
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}{Bogoliubov Transformation $\to$ Majorana Fermions}
+    
+    \begin{itemize}
+        \item Bogoliubov Transformation: 
+        \begin{itemize}
+            \item A transformation to new fermion fields; visualize the emergence of a neutral fermion via, $a \to a^+ + (aa)$; this is a Bogoliubov state.
+
+        \end{itemize}
+        
+        \item Majorana fermions (MFs):
+        \begin{itemize}
+            \item Splitting an electron into one fluctuating charge component, and spin fluctuation degree of freedom:
+            \begin{itemize}
+                \item Scalar MF: $\alpha_0$, Vector MF: $\boldsymbol\alpha = (\alpha_x, \alpha_y, \alpha_z)$
+            \end{itemize}
+            
+            \item Consequence of the tendency for particle pairs or hole pairs to form.
+        \end{itemize}
+
+
+        
+    \end{itemize}
+
+    \begin{figure}
+    \centering
+    \includegraphics[scale = 0.4]{bogstate.png}
+    \label{fig:elecmuon}
+    \end{figure}
+
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\subsection{Mean Field Approximations}
+
+\begin{frame}{General Mean Field Theory}
+    
+    A many-body to one-body reduction:
+
+    \begin{itemize}
+        \item Consider an interaction term in the Hamiltonian that is the product $AB$ of two operator fields $A$ and $B$:
+        \[
+            AB = A\langle B\rangle + \langle A\rangle B - \langle A\rangle \langle B\rangle +\delta A \delta B.
+        \]
+        
+        \item Assume $\delta A \delta B\sim 0$ (equivalent to assuming trial wavefunction).
+        
+        
+        
+        
+    \end{itemize}
     
 \end{frame}
 
 
-% % #########################################
-% % #########################################
-
-\section{The Spinon Model}
+% #########################################
+% #########################################
 
 
-\begin{frame}{Spinons}
+% \subsection{Spin as a Majorana Fermion}
+
+\begin{frame}{Building the Kondo Lattice Model}
+    
+    
+    \begin{itemize}
+        \item Define $c$, $f$ to be conduction and valence band fermion field operators.
+        
+        \item For $\mathbf{S}_i$, the spin-half local moment, the symmetric Kondo lattice Hamiltonian has the form
+        \begin{center}
+            $H = H_{KE} + H_{KI} = -\sum_{<ij>, \sigma} (c_{i\sigma}^+c_{j\sigma} + c_{j\sigma}^+c_{i\sigma}) + J\sum_i \mathbf{s}_i \cdot \mathbf{S}_i$
+        \end{center}
+        
+        with $\mathbf{s} = c_{\alpha}^+ \boldsymbol\sigma_{\alpha \beta}c_{\beta}$, the conduction electron spin operator.
+        
+        \item The goal is conversion to real fermion fields, i.e., Majorana Fermions (MFs), achieved by applying transforms:
+        \begin{itemize}
+            \item $c_i \to ic_i^+$, a $\pi/2$ phase shift;
+            
+            \item $(c_0, \textbf{c}) \to (\alpha_0, \boldsymbol\alpha)$; $\alpha_0$ is the scalar MF field and $\boldsymbol\alpha = (\alpha_x, \alpha_y, \alpha_z)$ is the vector MF field.
+        \end{itemize}
+        
+        
+    \end{itemize}
+    
+    
+    
+    
     
 \end{frame}
 
 
+% #########################################
+% #########################################
+
+
+\begin{frame}{Leading to Spin Decoupling}
+    
+    \begin{itemize}
+        \item KE in Hamiltonian then describes four degenerate Majorana bands
+        \[
+        {\displaystyle
+        H_{KE} \to -it\sum_{<ij>} (\alpha_{i0}\alpha_{j0} + \boldsymbol\alpha_i \cdot \boldsymbol\alpha_j),
+        }
+        \]
+        % and we have our MF fields:
+        % \[
+        % {\displaystyle
+        %     \alpha_{i0} = \frac{1}{2i}(-c_{i\downarrow}^+ + c_{i\downarrow}), \ \ 
+        %     \alpha_{ix} = \frac{1}{2}(c_{i\uparrow}^+ + c_{i\uparrow}),
+        % }
+        % \]
+        and the KI term becomes, for $\boldsymbol\eta = \boldsymbol\sigma /\sqrt{2}$,
+        \[
+        {\displaystyle
+        \frac{J}{2} \sum_i \left(\alpha_{i0} \boldsymbol\alpha_i \cdot (\boldsymbol\eta_i\times\boldsymbol\eta_i) - \frac{1}{2}(\boldsymbol\alpha_i \cdot \boldsymbol\eta_i)^2\right) + constant.
+        }
+        \]
+        With a complete transformation of the Kondo $H$, two mean field decouplings naturally arise
+        
+    \end{itemize}
+    
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\subsection{The Majorana Fermion MFT}
+
+\begin{frame}{The Majorana Fermion MFT}
+    
+    
+    \begin{itemize}
+        \item In the nonmagnetic limit, and neglecting numerical factors, the Majorana MFT falls out:
+
+        \begin{center}
+            $\boldsymbol s \cdot \boldsymbol S \to 2 \langle \boldsymbol\alpha_i \cdot \boldsymbol\eta_i\rangle \boldsymbol\alpha_i \cdot \boldsymbol\eta_i - \langle \boldsymbol\alpha_i \cdot \boldsymbol\eta_i\rangle^2$
+        \end{center}
+        
+        \item Thus, scalar Majorana field is ungapped. 
+        \item Recasting $\langle \boldsymbol\alpha_i \cdot \boldsymbol\eta_i\rangle$ in terms of original fermion fields, we find triplet pairing correlations --- crucial to suppressing hybridization:
+        % and therefore putting states in the gap
+        \begin{center}
+            $\langle \boldsymbol\alpha_i \cdot \boldsymbol\eta_i\rangle = 2\langle c_{i\uparrow}^+f_{i\uparrow}+ c_{i\uparrow}f_{i\uparrow}^+ \rangle + \left[ 
+            \langle c_{i\downarrow}^+f_{i\downarrow}+ c_{i\downarrow}f_{i\downarrow}^+ \rangle +
+            \langle {\color{orange} c_{i\downarrow}^+f_{i\downarrow}^+} + {\color{orange}c_{i\downarrow}f_{i\downarrow}} \rangle
+            \right]$
+        \end{center}
+        
+    \end{itemize}
+    
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}{The Majorana Fermion MFT Cont.}
+    
+    \begin{itemize}
+        \item Transformation shows both hybridization and triplet pairing correlations in KI term of $H$:
+        \begin{itemize}
+            \item Superconducting state with low phase
+            stiffness;
+            
+            \item SC suppressed by fluctuations, defects, and/or emergent 3D order parameter;
+            
+            \item Fluctuations due to nearly-immobile f-electrons, or scarcity of holes. 
+        
+        \end{itemize}
+        
+        \item Novelty in using a dual-band model requires that we focus only on spin triplet pairing;
+    \end{itemize}
+    
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}{Beyond Mean Field Theory}
+    
+    \begin{itemize}
+        \item We can simply try a different MFT; looking for a better trial wave function:
+        \begin{itemize}
+            \item Weiss, Hybridization, Hybrid + triplet pairing, RKKY
+        \end{itemize}
+        %Of course, we try to do this, but we may run out of ideas that usefully represent the wave function. 
+        
+        \item Is there a systematic way of improving upon a given MFT? Yes, various:
+        \begin{enumerate}
+            
+            \item Systems Analysis; linear response, feedback, Langevin noise.
+
+            
+            \item Take a textbook approach and look for leading order perturbation theory corrections.
+            %At minimum, this can be made self-consistent
+            
+            \item Effective Field Theory (EFT): treat order parameter as a starting point for a new quantum field, develop an effective Lagrangian description. 
+            \begin{itemize}
+                \item Products of fermion fields.
+                % instead of a single fermion field
+            \end{itemize}
+
+        \end{enumerate}
+
+    \end{itemize}
+    
+\end{frame}
+
+
+% #########################################
+% #########################################
+\section{The fCE Model}
+
+
+\begin{frame}
+    
+    \centering Fermionic Composite Excitons
+
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+% \begin{frame}{Hybridization of c-electron and f-electron Bands}
+    
+%     \begin{figure}
+%     \centering
+%     \includegraphics[scale = 0.5]{gap.png}
+%     \label{fig:elecmuon}
+%     \end{figure}
+    
+% \end{frame}
+
+
 % % #########################################
 % % #########################################
 
+
+% \begin{frame}{f-electron Hopping and Hybridization with c-states}
+    
+%     \begin{figure}
+%     \centering
+%     \includegraphics[scale = 0.5]{hybrid.png}
+%     \label{fig:elecmuon}
+%     \end{figure}
+    
+% \end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}{Gapless Fermionic Excitations (single-band)}
+
+    \begin{itemize}
+        \item Via Gutzwiller projection, enforce $n_f=1$ by multiplying the creation operator by a bosonic condition that an opposite spin state be absent: 
+        \begin{center}
+            $f_{\sigma}^+ \to g_{\sigma}^+ = (1-n_{-\sigma})f_{\sigma}^+$
+        \end{center}
+        for a slave boson $b = 1-n_{-\sigma}$. 
+        
+        \item We equivalently have
+        \begin{center}
+            $g_{\sigma}^+ = f_{\sigma}^+ - f_{-\sigma}^+f_{-\sigma}f_{\sigma}^+$,
+        \end{center}
+        a charge-neutral spinon.
+    \end{itemize}
+    
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}{Gapless Fermionic Excitations (Two-band)}
+    
+    \begin{itemize}
+        \item Returning to the Two-band Kondo problem:
+            \begin{itemize}
+                \item In the absence of the interactions, a spin-zero excitonic excitation is described by $c_{\sigma}^+f_{\sigma}$ -- a charge-zero boson.
+                
+                \item To include interactions, we consider the following fermionic composite 'exciton' (fCE):
+                \[
+                    h_{\sigma}^+ = (1-n_{-\sigma})c_{\sigma}^+ = c_{\sigma}^+ - f_{-\sigma}^+f_{-\sigma}c_{\sigma}^+.
+                \]
+            
+            \end{itemize}
+        
+    \end{itemize}
+    
+    
+    
+    
+    \begin{figure}[htbp!]%
+        \centering
+        \subfloat{{\includegraphics[width=4cm]{holon.png} }}%
+        \qquad
+        \subfloat{{\includegraphics[width=4cm]{fce.png} }}%
+        \label{fig:example}%
+    \end{figure}
+
+
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}{The Potential of fCEs}
+    
+    \begin{itemize}
+        \item As with conventional excitons, the $h_{\sigma}^+$ are states in the gap, and because they are fermions, they can precipitate QOs;
+        \begin{itemize}
+            \item f-band electron-hole pairing make $h_{\sigma}^+$ a three-fermion field with energy in insulating gap.
+            
+            \item Forms the necessary Fermi surface.
+
+        \end{itemize}
+        
+    \item Scalar MF is a superposition of a particle and a hole giving charge zero; fEC is product of particle-hole fields. 
+    
+    \item Suppressed double occupancy by locking f-band electrons and holes together (holon). 
+        
+    \end{itemize}
+\end{frame}
+
+
+% #########################################
+% #########################################
 \section{Supercurrent Theory}
 
-\begin{frame}{Supercurrents (+ Superfluidity)}
+\begin{frame}
+    
+    \centering Skyrme Insulators and \\
+    \centering Topological Instability
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}{Skyrme Insulators: Understanding the Supercurrent}
+    
+    \begin{itemize}
+        \item Cyclotron Motion $ \not \Leftrightarrow $ Insulating Behaviour;
+        \begin{itemize}
+            \item So the bulk must somehow break gauge invariance $\to$ dissolve supercurrents $\to$ fail SC.
+            
+        \end{itemize}
+        
+        \item Skyrmions:
+        \begin{itemize}
+            \item Form an unpinned liquid akin to vortex liquids of type II SCs.
+            
+            \item Density of Skyrmions is $n_s = B/ \phi_0$, so thermal conductivity is $\kappa \propto H$.
+            % for skyrmion liquid
+        \end{itemize}
+        
+        \item Skyrme insulator: A stacking of two-dimensional Skyrmion configurations, producing a dielectric.
+        
+        \item Dielectric facilitates breaking of gauge invariance;
+        
+        \begin{itemize}
+            \item Neutral quasiparticles, dissolving current operator, but...
+            \item Enabling diamagnetism.
+        \end{itemize}
+    \end{itemize}
+    
+    % supercurrent is a non-dissipative, superconducting current
+    
     
 \end{frame}
 
 
-% % #########################################
-% % #########################################
+% #########################################
+% #########################################
 
+
+\begin{frame}{Topological (In)Stability: A String Analogy}
+    
+    
+    \begin{itemize}
+        \item Gauge invariant current $J= q\frac{n}{m}(\hbar \nabla \theta -qA)$, with order parameter $\Psi(r) = |\Psi| \exp(i\theta)$ from Bogoliubov theory;
+        \begin{itemize}
+            \item Supercurrent density $n=|\Psi|^2$.
+        \end{itemize}
+        \item The order parameter of a conventional SC lies on a circular manifold in $\mathbb{C}$;
+        \begin{itemize}
+            \item Topologically stable winding number; a string about a rod.
+        \end{itemize}
+        
+        \item For TKI SmB$_6$, the order parameter, $M(r)$, lies on a spherical manifold in $\mathbb{C}\times \mathbb{R}$;
+        \begin{itemize}
+            \item Unprotected winding; a string about a sphere.
+        \end{itemize}
+    \end{itemize}
+    
+    
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}{A String Analogy Cont.}
+    
+    \begin{figure}
+    \centering
+    \includegraphics[scale = 0.45]{top1.png}
+    \label{fig:top}
+    \end{figure}
+    
+    
+    
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}{Visualizing 4D Supercurrents}
+    
+    \begin{figure}[t!]
+    \centering
+    \includegraphics[scale = 0.43
+    ]{top2.png}
+    \label{fig:top}
+    \end{figure}
+    
+
+\end{frame}
+
+
+% #########################################
+% #########################################
+
+
+\begin{frame}{Topological Instability}
+    
+    \begin{itemize}
+        \item $\phi \to 0$ such that $J\to 0$, giving the expected current instability.
+        \begin{itemize}
+            \item $M$ tends towards $\Delta x = 0$ on average because it sees reductions in energy for doing so.
+            % (a state exhibiting current is not in equilibrium).
+        \end{itemize}
+        
+        \item Thus, consider the missing degree of freedom for $|\Psi|$ as being an infinite resistance to equilibration.
+        
+        \item Failed SC $\Leftrightarrow$ transformation into a Skyrme insulator (dielectric)
+        
+        \item Recalling, $\kappa \sim H$, we have implication of a flux liquid:
+        \begin{itemize}
+            \item Skyrmion insulators verifiable if we find anomalous conductivity is perpendicular to $H$ \cite{coleman2017}.
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+
+% #########################################
+% #########################################
 \section{Takeaways}
+
 
 \begin{frame}{Implications}
     
     \begin{itemize}
-        \item The MF model presents a practicable rationale for states in the gap.
+        \item Both gapless scalar MF-liquids and fCEs present practicable explanations for states in the gap.
         
-        \item Can we just keep adding (always unnecessarily) complex descriptions, or should we 'seal off' and commit to a new prescription?
+        \item Reduced mobility do to $c$ and $f$ electron pairing -- $f$ lowers mobility; 
+        \begin{itemize}
+            \item Reduced phase stiffness as in RVB theory may suppress long-range SC order.
+        \end{itemize}
         
-        \item How do we reinvent condensed matter physics to both simplify and clarify what we know?
+        \item As it concerns experiment:
+        \begin{itemize}
+            \item Many long/short-range order states appear possible; hydrostatic pressure tuning of very pure samples (SmB$_6$ and SmS) may recover these.
+            % Perhaps pressure brings specimen is close to a Majorana state and we simply need more pressure to reach it 
+            
+            \item States in the insulating gap imply large, linear heat capacities; thermal -- not electrical -- conductivity: We can measure this!
+        \end{itemize}
+        
+        \item This calls for renewed study of other well-known TKIs like SmS and FeSi.
+
     \end{itemize}
     
 \end{frame}
 
 
-% % #########################################
-% % #########################################
+% #########################################
+% #########################################
 
 
 \begin{frame}{}
@@ -285,7 +836,9 @@ Materials Theory Group, Rutgers University, USA
 
 \begin{frame}[allowframebreaks]
         \frametitle{References}
-        \printbibliography
+        
+        \bibliography{uoc}
+
 \end{frame}
 
 
